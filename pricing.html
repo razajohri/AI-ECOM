@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing LunaLink</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="pricing.css">
+</head>
+<body>
+    <div class="cursor outer"></div>
+    <div class="cursor inner"></div>
+    <h2 style="color: rgb(211, 182, 249);text-align:center;">PRICING MENU</h2> 
+    <div class="carousel">
+        <div class="carousel-item">
+            <div class="carousel-caption">
+                <div class="deal">
+                    <h5>FREE</h5>
+                    <h4>0$/7 DAYS</h4>
+                </div>
+                <ul>
+                    <li>NO SCRIPT CUSTOMIZATION </li>
+                    <li>5 ABANDONED CARTS CALL</li>
+                    <li>NO 24/7 CUSTOMER SERVICE AI</li>
+                    <li>NO DEDICATED MANAGER</li>
+                    <li>NO PRODUCT RECOMMENDATION</li>
+                </ul>
+                <a href="#" class="btn"> BUY NOW</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-caption">
+                <div class="deal">
+                    <h5>BASIC</h5>
+                    <h4>60$/30DAYS</h4>
+                </div>
+                <ul>
+                    <li>CUSTOM SCRIPT CUSTOMIZATION </li>
+                    <li>100 ABANDONED CARTS CALL</li>
+                    <li>DEDICATED MANAGER</li>
+                    <li>NO 24/7 CUSTOMER SERVICE AI</li>
+                    <li>NO PRODUCT RECOMMENDATION</li>
+                </ul>
+                <a href="#" class="btn"> BUY NOW</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-caption">
+                <div class="deal">
+                    <h5>PRO $</h5>
+                    <h4>110$/30 DAYS</h4>
+                </div>
+                <ul>
+                    <li>CUSTOM SCRIPT CUSTOMIZATION </li>
+                    <li>UNLIMITED ABANDONED CARTS CALL</li>
+                    <li>24/7 CUSTOMER SERVICE AI</li>
+                    <li>DEDICATED MANAGER</li>
+                    <li>PRODUCT RECOMMENDATION</li>
+                </ul>
+                <a href="#" class="btn"> BUY NOW</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.carousel').carousel({
+                padding: 200
+            });
+            autoplay();
+        });
+
+        function autoplay() {
+            $('.carousel').carousel('next');
+            setTimeout(autoplay, 4500);
+        }
+    </script>
+    <script>
+        const cursor = document.querySelectorAll(".cursor");
+const links = document.querySelectorAll(".item");
+
+window.addEventListener("mousemove", (e) => {
+  
+  let x = e.pageX;
+  let y = e.pageY;
+  
+  cursor.forEach(el => {
+    el.style.left = `${x}px`;
+    el.style.top = `${y}px`;
+    
+    links.forEach(link => {
+      link.addEventListener("mouseenter", () => {
+        el.classList.add("hover");
+      })
+      link.addEventListener("mouseleave", () => {
+        el.classList.remove("hover");
+      })
+    })
+    
+  })
+  
+})
+    </script>
+</body>
+</html>

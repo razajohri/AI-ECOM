@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CONTACT US</title>
+<link rel="stylesheet" href="contactus.css">
+</head>
+<body>
+    <div class="cursor outer"></div>
+    <div class="cursor inner"></div>
+    <div class="login-box">
+        <h2>CONTACT US</h2>
+        <form>
+            <div class="user-box">
+                <input type="text" name="" required="">
+            <label>Full Name</label>    
+            </div>
+            <div class="user-box">
+                <input type="email" name="" required="">
+                <label>Email</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="" required="">
+                <label> Phone Number</label>
+            </div>
+            <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Send Away
+            </a>
+            <!--That's all-->
+        </form>
+    </div>
+    <script>
+        const cursor = document.querySelectorAll(".cursor");
+        const links = document.querySelectorAll(".item");
+        
+        window.addEventListener("mousemove", (e) => {
+          
+          let x = e.pageX;
+          let y = e.pageY;
+          
+          cursor.forEach(el => {
+            el.style.left = `${x}px`;
+            el.style.top = `${y}px`;
+            
+            links.forEach(link => {
+              link.addEventListener("mouseenter", () => {
+                el.classList.add("hover");
+              })
+              link.addEventListener("mouseleave", () => {
+                el.classList.remove("hover");
+              })
+            })
+            
+          })
+          
+        }) </script>
+</body>
+</html> 
